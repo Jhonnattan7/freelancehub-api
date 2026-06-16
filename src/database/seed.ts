@@ -27,6 +27,7 @@ async function runSeed() {
     const usersToInsert = [
       { name: 'Ana López', email: 'ana@mail.com', password: '1234' },
       { name: 'Carlos Rivas', email: 'carlos@mail.com', password: '5678' },
+      { name: 'Jhonnatan Peñate', email: 'jhonnatan@mail.com', password: '1234' },
     ];
 
     for (const userData of usersToInsert) {
