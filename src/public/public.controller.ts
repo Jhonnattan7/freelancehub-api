@@ -1,8 +1,10 @@
 import { Controller, Get } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { Service } from '../services/service.entity';
 
+@ApiTags('Public')
 @Controller('public')
 export class PublicController {
   constructor(
@@ -13,7 +15,9 @@ export class PublicController {
   @Get('services')
   async getServices() {
     const services = await this.serviceRepository.find({
-      relations: ['provider'],
+      relations: {
+        provider: true,
+      },
     });
 
     return services.map(service => ({
