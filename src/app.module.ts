@@ -6,6 +6,8 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { User } from './users/user.entity';
 import { Service } from './services/service.entity';
+import { ServicesModule } from './services/services.module';
+import { PublicModule } from './public/public.module';
 
 @Module({
   imports: [
@@ -27,6 +29,8 @@ import { Service } from './services/service.entity';
       }),
     }),
     AuthModule,
+    ServicesModule,
+    PublicModule,
   ],
   controllers: [AppController],
   providers: [AppService],
